@@ -9,7 +9,11 @@ drop.get { req in
 }
 
 drop.get("hello") { request in
-  return "Hello World!"
+    let name = request.data["name"]?.string ?? "stranger"
+
+    return try drop.view.make("hello", [
+      "name": name
+    ])
 }
 
 drop.resource("posts", PostController())

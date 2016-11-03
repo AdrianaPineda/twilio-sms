@@ -1,0 +1,9 @@
+#extend("base")
+
+#export("head") {
+<title>Hello from VaporSample </title>
+}
+
+#export("body") {
+<h1>Hello #(name)!</h1>
+}
